@@ -5,6 +5,7 @@ describe AWeber::Resources::Subscriber do
   subject { aweber.account.lists[1].subscribers[50723026] }
   
   it { should respond_to :ad_tracking }
+  it { should respond_to :tags }
   it { should respond_to :email }
   it { should respond_to :http_etag }
   it { should respond_to :id }
@@ -31,6 +32,7 @@ describe AWeber::Resources::Subscriber do
   its(:writable_attrs) { should include :status }
   its(:writable_attrs) { should include :custom_fields }
   its(:writable_attrs) { should include :ad_tracking }
+  its(:writable_attrs) { should include :tags }
   its(:writable_attrs) { should include :last_followup_message_number_sent }
 
   it "should move lists" do
