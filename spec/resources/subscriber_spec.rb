@@ -35,6 +35,10 @@ describe AWeber::Resources::Subscriber do
   its(:writable_attrs) { should include :tags }
   its(:writable_attrs) { should include :last_followup_message_number_sent }
 
+  it "should determine list_id from self_link" do
+    subject.list_id.should == 1
+  end
+
   it "should move lists" do
     list = "http://api.aweber.com/1.0/accounts/1/lists/987654"
     json = { "ws.op" => "move", "list_link" => list }

@@ -27,6 +27,10 @@ module AWeber
       alias_attribute :is_verified?, :is_verified
       alias_attribute :notes, :misc_notes
 
+      def list_id
+        self_link.match(%r[lists/(\d+)/])[1].to_i
+      end
+
       def list=(list)
         client.post(self_link, {
           "ws.op"     => "move",
@@ -52,8 +56,7 @@ module AWeber
     private
 
       def move_to(list)
-        old_list = self_link.match(%r[lists/(\d+)/])[1]
-        client.account.lists[old_list.to_i].subscribers[id] = nil
+        client.account.lists[list_id].subscribers[id] = nil
         list.subscribers[id] = self
       end
     end
