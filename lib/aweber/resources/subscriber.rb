@@ -9,8 +9,10 @@ module AWeber
       api_attr :status,        :writable => true
       api_attr :custom_fields, :writable => true
       api_attr :ad_tracking,   :writable => true
-      api_attr :tags,          :writable => true
       api_attr :last_followup_message_number_sent, :writable => true
+
+      # tags confuses the API on update
+      api_attr :tags  #,          :writable => true
 
       api_attr :ip_address
       api_attr :is_verified

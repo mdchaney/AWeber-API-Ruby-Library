@@ -32,7 +32,7 @@ describe AWeber::Resources::Subscriber do
   its(:writable_attrs) { should include :status }
   its(:writable_attrs) { should include :custom_fields }
   its(:writable_attrs) { should include :ad_tracking }
-  its(:writable_attrs) { should include :tags }
+  its(:writable_attrs) { should_not include :tags }
   its(:writable_attrs) { should include :last_followup_message_number_sent }
 
   it "should determine list_id from self_link" do
