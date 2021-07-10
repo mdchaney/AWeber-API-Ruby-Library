@@ -55,6 +55,10 @@ module AWeber
         move_to(list)
       end
 
+      def change_email(new_email)
+        client.patch(self_link, email: new_email)
+      end
+
     private
 
       def move_to(list)

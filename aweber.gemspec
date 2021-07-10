@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
   s.name         = "aweber"
-  s.version      = "1.6.3"
+  s.version      = "1.6.4"
   s.platform     = Gem::Platform::RUBY
   s.summary      = "Ruby interface to AWeber's API"
   s.description  = "Ruby interface to AWeber's API"
