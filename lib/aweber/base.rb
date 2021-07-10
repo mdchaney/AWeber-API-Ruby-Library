@@ -27,6 +27,10 @@ module AWeber
       oauth.put(uri, body.to_json, {"Content-Type" => "application/json"})
     end
     
+    def patch(uri, body={})
+      oauth.patch(uri, body.to_json, {"Content-Type" => "application/json"})
+    end
+    
     def path
       ""
     end
